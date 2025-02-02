@@ -1,29 +1,27 @@
-
- 7484  uv run main.py everything --help
- 7551  uv run main.py everything --query Apple
- 7553  uv run main.py everything --query Apple
- 7555  uv run main.py everything --query Apple
- 7557  uv run main.py everything --query Apple
- 7559  uv run main.py everything --query Apple
- 7677  uv run main.py everything --query=Economy
- 7677  uv run main.py everything --query=Economy --output=json
- 7677  uv run main.py everything --query=Economy --output=csv
- 7677  uv run main.py everything --query=Economy --output=table
- 7569  uv run main.py everything --query=Trump --from_date=2025-01-01 --to_date=2025-01-05 
- 7570  uv run main.py everything --query=Trump --from_date=2025-01-01 --to_date=2025-01-02
- 7569  uv run main.py everything --query=Trump --from_date=2025-01-01 --to_date=2025-01-05 --output=json
- 7569  uv run main.py everything --query=Trump --from_date=2025-01-01 --to_date=2025-01-05 --output=csv
- 7569  uv run main.py everything --query=Trump --from_date=2025-01-01 --to_date=2025-01-05 --output=table
+uv run app.py everything --help
+uv run app.py everything --query Apple
+uv run app.py everything --query Apple
+uv run app.py everything --query Apple
+uv run app.py everything --query Apple
+uv run app.py everything --query Apple
+uv run app.py everything --query=Economy
+uv run app.py everything --query=Economy --output=json
+uv run app.py everything --query=Economy --output=csv
+uv run app.py everything --query=Economy --output=table
+uv run app.py everything --query=Trump --from_date=2025-01-01 --to_date=2025-01-05 
+uv run app.py everything --query=Trump --from_date=2025-01-01 --to_date=2025-01-02
+uv run app.py everything --query=Trump --from_date=2025-01-01 --to_date=2025-01-05 --output=json
+uv run app.py everything --query=Trump --from_date=2025-01-01 --to_date=2025-01-05 --output=csv
+uv run app.py everything --query=Trump --from_date=2025-01-01 --to_date=2025-01-05 --output=table
  
-
- 7485  uv run main.py topheadlines --help
- 7563  uv run main.py topheadlines --query=Apple --category=technology
- 7565  uv run main.py topheadlines --query=Apple --category=technology
- 7573  uv run main.py topheadlines --query=DeepFake --category=technology
- 7574  uv run main.py topheadlines --query=DeepSeek --category=technology
- 7574  uv run main.py topheadlines --query=DeepSeek --category=technology --output=json
- 7574  uv run main.py topheadlines --query=DeepSeek --category=technology --output=csv
- 7574  uv run main.py topheadlines --query=DeepSeek --category=technology --output=table
- 7590  uv run main.py topheadlines --output=json
- 7591  uv run main.py topheadlines --output=csv
- 7660  uv run main.py topheadlines --output=table
+uv run app.py topheadlines --help
+uv run app.py topheadlines --query=Apple --category=technology
+uv run app.py topheadlines --query=Apple --category=technology
+uv run app.py topheadlines --query=DeepFake --category=technology
+uv run app.py topheadlines --query=DeepSeek --category=technology
+uv run app.py topheadlines --query=DeepSeek --category=technology --output=json
+uv run app.py topheadlines --query=DeepSeek --category=technology --output=csv
+uv run app.py topheadlines --query=DeepSeek --category=technology --output=table
+uv run app.py topheadlines --output=json
+uv run app.py topheadlines --output=csv
+uv run app.py topheadlines --output=table
