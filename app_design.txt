@@ -1,0 +1,55 @@
+NewsAPI
+everything
+    apiKey=cf96fa53ce3c40f2835d7a955e868de1
+    url=https://newsapi.org/v2/everything?q={q}&apiKey={apiKey}
+    Options:
+        q   keyword or phrase to search
+        searchIn   title | description | content; default all fields are searched; Do Not Implement
+        sources; Do Not Implement
+        domains; Do Not Implement
+        excludeDomains; Do Not Implement
+        from;  e.g. 2025-02-01
+        to;    e.g. 2025-02-01
+        language; Do Not Implement
+        sortBy; Do Not Implement from api, maybe implement in app
+        pageSize; int, default=100, maximum=100, The number of results to return per page; Do Not Implement
+        page; int, default=1, Use to page through results; Do Not Implement
+
+        sort_by; local sort of column publishedAt
+
+top-headlines
+    apiKey=cf96fa53ce3c40f2835d7a955e868de1
+    url=https://newsapi.org/v2/top-headlines?q={q}&country=us&apiKey={apiKey}
+    class CategoryOption(str, Enum):
+        business = "business"
+        entertainment = "entertainment"
+        general = "general"
+        health = "health"
+        science = "science"
+        sports = "sports" 
+        technology = "technology"     
+    Options:
+        country; Do Not Implement
+        category; see above class
+        sources; Do Not Implement
+        q   keyword or phrase to search
+        pageSize; int, default=100, maximum=100, The number of results to return per page
+        page; int, default=1, Use to page through result
+
+        sort_by; local sort of column publishedAt
+
+Typer Implementation
+Command
+everything
+    url=https://newsapi.org/v2/everything?apiKey={apiKey} + &q={q} [+ &from{from_date} + &to{to_date}]
+    --query     -q, default?, *required:                query: str = typer.Option(..., "--query", "-q", help="subject, such as Apple | DeepSeek | Trump")
+    --from_date -f, default=None, not required:         from_date: str = typer.Option(None, "--from_date", "-f", help="starting date")
+    --to_date   -t, default=None, not required:         to_date: str = typer.Option(None, "--to_date", "-t", help="ending date")
+    --sort_by   -s, local sort of column publishedAt:   sort_by: str = typer.Option(None, "--sort_by", "-s", help="sort by publishedAt")
+top-headlines
+    url=https://newsapi.org/v2/top-headlines?&country=us&apiKey={apiKey} [+ &q={q}] + [&category={category}]
+    --query -q, default=None, not required
+      country, will not be implemented and will default to country=us
+    --category -c, default=None, not required           category: CategoryOption = typer.Option(None, "--category", "-c", help="category option") 
+
+
