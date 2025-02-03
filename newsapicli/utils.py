@@ -1,31 +1,31 @@
-import json
+# import json
 
-from json_flatten import flatten
-from json_flatten import unflatten
-
-
-# Function to flatten JSON
-def flatten_json(y):
-    out = {}
-
-    def flatten(x, name=''):
-        if type(x) is dict:
-            for a in x:
-                flatten(x[a], name + a + '_')
-        elif type(x) is list:
-            i = 0
-            for a in x:
-                flatten(a, name + str(i) + '_')
-                i += 1
-        else:
-            out[name[:-1]] = x
-
-    flatten(y)
-    return out
+from flatten_json import flatten as flatten
+from flatten_json import unflatten
 
 
-def dict_to_json(_dict):
-    return json.dumps(_dict)
+# # Function to flatten JSON
+# def flatten_json(y):
+#     out = {}
+
+#     def flatten(x, name=''):
+#         if type(x) is dict:
+#             for a in x:
+#                 flatten(x[a], name + a + '_')
+#         elif type(x) is list:
+#             i = 0
+#             for a in x:
+#                 flatten(a, name + str(i) + '_')
+#                 i += 1
+#         else:
+#             out[name[:-1]] = x
+
+#     flatten(y)
+#     return out
+
+
+# def dict_to_json(_dict):
+#     return json.dumps(_dict)
 
 
 

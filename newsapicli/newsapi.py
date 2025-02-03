@@ -8,8 +8,10 @@ import rich
 from rich.console import Console
 from rich.table import Table
 
-from newsapicli.utils import flatten_json
+# from newsapicli.utils import flatten_json # deprecate
 from newsapicli.options import OutputOption
+
+from newsapicli.utils import flatten
 
 
 def get_articles(url: str):
@@ -25,7 +27,8 @@ def output_articles(articles: List[dict], output: OutputOption.table):
     elif output == OutputOption.csv:
         list_of_dict = []
         for d in articles:
-            list_of_dict.append(flatten_json(d))
+            # list_of_dict.append(flatten_json(d)) # rremove
+            list_of_dict.append(flatten(d))
             
         fieldnames = list_of_dict[0].keys()
         writer = csv.DictWriter(sys.stdout, fieldnames=fieldnames)
@@ -35,7 +38,8 @@ def output_articles(articles: List[dict], output: OutputOption.table):
         table = Table()
         list_of_dict = []
         for d in articles:
-            list_of_dict.append(flatten_json(d))        
+            # list_of_dict.append(flatten_json(d)) # remove
+            list_of_dict.append(flatten(d))
         
         headers = list_of_dict[0].keys()
         table.add_column("")
